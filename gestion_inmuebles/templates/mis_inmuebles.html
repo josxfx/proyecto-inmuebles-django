@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}Mis inmuebles{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1>Mis inmuebles</h1>
+
+            <p class="text-muted mb-0">
+                Administra los inmuebles que tienes publicados.
+            </p>
+        </div>
+
+        <a href="{% url 'agregar_inmueble' %}"
+           class="btn btn-primary">
+            Agregar inmueble
+        </a>
+
+    </div>
+
+    {% if inmuebles %}
+
+        <div class="row g-4">
+
+            {% for inmueble in inmuebles %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                {{ inmueble.nombre }}
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                {{ inmueble.descripcion }}
+                            </p>
+
+                            <hr>
+
+                            <p class="mb-1">
+                                <strong>Comuna:</strong>
+                                {{ inmueble.comuna }}
+                            </p>
+
+                            <p class="mb-1">
+                                <strong>Región:</strong>
+                                {{ inmueble.comuna.region }}
+                            </p>
+
+                            <p class="mb-1">
+                                <strong>Tipo:</strong>
+                                {{ inmueble.tipo_inmueble }}
+                            </p>
+
+                            <p class="mb-1">
+                                <strong>Habitaciones:</strong>
+                                {{ inmueble.habitaciones }}
+                            </p>
+
+                            <p class="mb-1">
+                                <strong>Baños:</strong>
+                                {{ inmueble.banos }}
+                            </p>
+
+                            <p class="mb-3">
+                                <strong>Precio mensual:</strong>
+                                ${{ inmueble.precio_mensual }}
+                            </p>
+
+                            <div class="d-flex gap-2">
+
+                                <a href="{% url 'editar_inmueble' inmueble.id %}"
+                                   class="btn btn-primary btn-sm">
+                                    Editar
+                                </a>
+
+                                <form method="post"
+                                      action="{% url 'eliminar_inmueble' inmueble.id %}"
+                                      class="d-inline">
+
+                                    {% csrf_token %}
+
+                                    <button type="submit"
+                                            class="btn btn-outline-danger btn-sm"
+                                            onclick="return confirm('¿Estás seguro de que deseas eliminar este inmueble?');">
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="alert alert-info">
+            Todavía no tienes inmuebles registrados.
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

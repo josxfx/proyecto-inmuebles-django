@@ -1,0 +1,66 @@
+
+REGIÓN: Biobío
+==================================================
+Comuna: Concepción
+Nombre: Casa Concepción
+Descripción: Casa amplia en barrio residencial, con patio y tres habitaciones.
+
+
+REGIÓN: Coquimbo
+==================================================
+Comuna: La Serena
+Nombre: Departamento La Serena
+Descripción: Departamento cercano a la costa, con dos habitaciones y espacios luminosos.
+
+
+REGIÓN: La Araucanía
+==================================================
+Comuna: Temuco
+Nombre: Casa Temuco
+Descripción: Casa familiar con patio, ubicada en un sector tranquilo de Temuco.
+
+
+REGIÓN: Los Lagos
+==================================================
+Comuna: Puerto Montt
+Nombre: Departamento Puerto Montt
+Descripción: Departamento con vista al entorno natural, cercano al centro de Puerto Montt.
+
+
+REGIÓN: Metropolitana de Santiago
+==================================================
+Comuna: Las Condes
+Nombre: Casa Las Condes
+Descripción: Casa familiar amplia con jardín, cuatro habitaciones y dos estacionamientos.
+
+Comuna: Melipilla
+Nombre: Parcela Melipilla
+Descripción: Parcela con amplio terreno, áreas verdes y espacio para actividades familiares.
+
+Comuna: Ñuñoa
+Nombre: Departamento Ñuñoa
+Descripción: Departamento moderno cercano a parques, comercios y estaciones de metro.
+
+Comuna: Providencia
+Nombre: Departamento Providencia
+Descripción: Departamento moderno de dos habitaciones, cercano a servicios, restaurantes y transporte público.
+
+Comuna: Puente Alto
+Nombre: Casa Puente Alto
+Descripción: Casa familiar con patio, tres habitaciones y buena conectividad.
+
+Comuna: Santiago
+Nombre: Departamento Santiago Centro
+Descripción: Departamento de un dormitorio ubicado en el centro de Santiago, cercano a servicios y transporte.
+
+
+REGIÓN: Valparaíso
+==================================================
+Comuna: Valparaíso
+Nombre: Casa Valparaíso
+Descripción: Casa ubicada en un sector residencial de Valparaíso, con vista hacia la ciudad.
+
+Comuna: Viña del Mar
+Nombre: Departamento Viña del Mar
+Descripción: Departamento cercano a la playa, comercios y áreas de entretenimiento.
+

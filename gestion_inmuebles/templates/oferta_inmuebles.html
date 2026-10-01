@@ -1,0 +1,225 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Inmuebles disponibles{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1>Inmuebles disponibles</h1>
+
+        <p class="text-muted">
+            Encuentra propiedades disponibles para arriendo
+            según la región y comuna que prefieras.
+        </p>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-5">
+
+        <div class="card-body p-4">
+
+            <h5 class="mb-4">
+                Buscar por ubicación
+            </h5>
+
+            <form method="get">
+
+                <div class="row g-3 align-items-end">
+
+                    <div class="col-md-5">
+
+                        <label for="region" class="form-label">
+                            Región
+                        </label>
+
+                        <select name="region"
+                                id="region"
+                                class="form-select">
+
+                            <option value="">
+                                Todas las regiones
+                            </option>
+
+                            {% for region in regiones %}
+
+                                <option value="{{ region.id }}"
+                                    {% if region_seleccionada == region.id|stringformat:"s" %}
+                                        selected
+                                    {% endif %}>
+                                    {{ region.nombre }}
+                                </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-5">
+
+                        <label for="comuna" class="form-label">
+                            Comuna
+                        </label>
+
+                        <select name="comuna"
+                                id="comuna"
+                                class="form-select">
+
+                            <option value="">
+                                Todas las comunas
+                            </option>
+
+                            {% for comuna in comunas %}
+
+                                <option value="{{ comuna.id }}"
+                                    {% if comuna_seleccionada == comuna.id|stringformat:"s" %}
+                                        selected
+                                    {% endif %}>
+                                    {{ comuna.nombre }}
+                                </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            Filtrar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% if inmuebles %}
+
+        <div class="row g-4">
+
+            {% for inmueble in inmuebles %}
+
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h5 class="card-title">
+                                {{ inmueble.nombre }}
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                {{ inmueble.descripcion }}
+                            </p>
+
+                            <hr>
+
+                            <p class="mb-2">
+                                <strong>Comuna:</strong>
+                                {{ inmueble.comuna }}
+                            </p>
+
+                            <p class="mb-2">
+                                <strong>Región:</strong>
+                                {{ inmueble.comuna.region }}
+                            </p>
+
+                            <p class="mb-2">
+                                <strong>Tipo:</strong>
+                                {{ inmueble.tipo_inmueble }}
+                            </p>
+
+                            <p class="mb-2">
+                                <strong>Habitaciones:</strong>
+                                {{ inmueble.habitaciones }}
+                            </p>
+
+                            <p class="mb-2">
+                                <strong>Baños:</strong>
+                                {{ inmueble.banos }}
+                            </p>
+
+                            <p class="mb-2">
+                                <strong>Estacionamientos:</strong>
+                                {{ inmueble.estacionamientos }}
+                            </p>
+
+                            <p class="mb-4 fs-5">
+                                <strong>
+                                    ${{ inmueble.precio_mensual }}
+                                </strong>
+
+                                <small class="text-muted">
+                                    / mes
+                                </small>
+                            </p>
+
+                            {% if user.is_authenticated %}
+
+                                {% if usuario.tipo_usuario == 'arrendatario' %}
+
+                                    <a href="{% url 'solicitar_arriendo' inmueble.id %}"
+                                       class="btn btn-primary w-100 mt-auto">
+                                        Solicitar arriendo
+                                    </a>
+
+                                {% endif %}
+
+                            {% else %}
+
+                                <a href="{% url 'login' %}"
+                                   class="btn btn-outline-primary w-100 mt-auto">
+                                    Inicia sesión para solicitar
+                                </a>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="alert alert-info text-center">
+
+            <h5 class="alert-heading">
+                No encontramos inmuebles
+            </h5>
+
+            <p class="mb-0">
+                No hay propiedades disponibles con los filtros seleccionados.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+    <div class="text-center mt-5">
+
+        <a href="{% url 'bienvenido' %}"
+           class="btn btn-outline-secondary">
+            Volver al inicio
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

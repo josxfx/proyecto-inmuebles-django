@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block title %}Bienvenido{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-5 fw-bold">
+            ¡Bienvenido/a!
+        </h1>
+
+        <p class="lead text-muted">
+            Encuentra y administra tus opciones de arriendo de inmuebles.
+        </p>
+
+    </div>
+
+    <div class="row justify-content-center g-4">
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <h4 class="card-title mb-3">
+                        Propiedades disponibles
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Revisa los inmuebles disponibles para arriendo.
+                    </p>
+
+                    <a href="{% url 'oferta_inmuebles' %}"
+                       class="btn btn-primary">
+                        Ver propiedades
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="card-body text-center p-4">
+
+                    <h4 class="card-title mb-3">
+                        Mi perfil
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Consulta y modifica tus datos personales.
+                    </p>
+
+                    <a href="{% url 'perfil' %}"
+                       class="btn btn-outline-primary">
+                        Ver mi perfil
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% if usuario.tipo_usuario == 'arrendatario' %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="card-body text-center p-4">
+
+                        <h4 class="card-title mb-3">
+                            Mis solicitudes
+                        </h4>
+
+                        <p class="card-text text-muted">
+                            Consulta el estado de tus solicitudes de arriendo.
+                        </p>
+
+                        <a href="{% url 'mis_solicitudes' %}"
+                           class="btn btn-outline-primary">
+                            Ver mis solicitudes
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endif %}
+
+        {% if usuario.tipo_usuario == 'arrendador' %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="card-body text-center p-4">
+
+                        <h4 class="card-title mb-3">
+                            Mis inmuebles
+                        </h4>
+
+                        <p class="card-text text-muted">
+                            Administra los inmuebles que tienes publicados.
+                        </p>
+
+                        <a href="{% url 'mis_inmuebles' %}"
+                           class="btn btn-outline-primary">
+                            Administrar inmuebles
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <form method="post"
+              action="{% url 'logout' %}"
+              class="d-inline">
+
+            {% csrf_token %}
+
+            <button type="submit"
+                    class="btn btn-outline-secondary">
+                Cerrar sesión
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+```

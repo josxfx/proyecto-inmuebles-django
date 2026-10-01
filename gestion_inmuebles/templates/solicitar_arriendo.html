@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Solicitar arriendo{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <h1 class="text-center mb-4">
+                        Solicitar arriendo
+                    </h1>
+
+                    <h4 class="mb-3">
+                        {{ inmueble.nombre }}
+                    </h4>
+
+                    <p class="text-muted">
+                        {{ inmueble.descripcion }}
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>Comuna:</strong>
+                        {{ inmueble.comuna }}
+                    </p>
+
+                    <p>
+                        <strong>Región:</strong>
+                        {{ inmueble.comuna.region }}
+                    </p>
+
+                    <p>
+                        <strong>Tipo:</strong>
+                        {{ inmueble.tipo_inmueble }}
+                    </p>
+
+                    <p>
+                        <strong>Habitaciones:</strong>
+                        {{ inmueble.habitaciones }}
+                    </p>
+
+                    <p>
+                        <strong>Baños:</strong>
+                        {{ inmueble.banos }}
+                    </p>
+
+                    <p>
+                        <strong>Precio mensual:</strong>
+                        ${{ inmueble.precio_mensual }}
+                    </p>
+
+                    <div class="alert alert-info mt-4">
+                        Tu solicitud será enviada al arrendador
+                        y quedará registrada con estado
+                        <strong>pendiente</strong>.
+                    </div>
+
+                    <form method="post">
+
+                        {% csrf_token %}
+
+                        <div class="d-flex justify-content-center gap-2 mt-4">
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Confirmar solicitud
+                            </button>
+
+                            <a href="{% url 'oferta_inmuebles' %}"
+                               class="btn btn-secondary">
+                                Cancelar
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

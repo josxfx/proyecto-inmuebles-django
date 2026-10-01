@@ -1,0 +1,284 @@
+[
+    {
+        "model": "gestion_inmuebles.usuario",
+        "pk": 1,
+        "fields": {
+            "nombres": "Carlos",
+            "apellidos": "Pérez",
+            "rut": "11111111-1",
+            "direccion": "Av. Providencia 100",
+            "telefono": "912345678",
+            "correo_electronico": "carlos.perez@example.com",
+            "tipo_usuario": "arrendador"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.usuario",
+        "pk": 2,
+        "fields": {
+            "nombres": "Ana",
+            "apellidos": "González",
+            "rut": "22222222-2",
+            "direccion": "Av. Las Condes 200",
+            "telefono": "923456789",
+            "correo_electronico": "ana.gonzalez@example.com",
+            "tipo_usuario": "arrendador"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.usuario",
+        "pk": 3,
+        "fields": {
+            "nombres": "María",
+            "apellidos": "Soto",
+            "rut": "33333333-3",
+            "direccion": "Av. Irarrázaval 300",
+            "telefono": "934567890",
+            "correo_electronico": "maria.soto@example.com",
+            "tipo_usuario": "arrendador"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.usuario",
+        "pk": 4,
+        "fields": {
+            "nombres": "Pedro",
+            "apellidos": "Muñoz",
+            "rut": "44444444-4",
+            "direccion": "Av. Grecia 400",
+            "telefono": "945678901",
+            "correo_electronico": "pedro.munoz@example.com",
+            "tipo_usuario": "arrendador"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.usuario",
+        "pk": 5,
+        "fields": {
+            "nombres": "Camila",
+            "apellidos": "Rojas",
+            "rut": "55555555-5",
+            "direccion": "Av. O'Higgins 500",
+            "telefono": "956789012",
+            "correo_electronico": "camila.rojas@example.com",
+            "tipo_usuario": "arrendatario"
+        }
+    },
+
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 1,
+        "fields": {
+            "nombre": "Departamento Providencia",
+            "descripcion": "Departamento moderno de dos habitaciones, cercano a servicios, restaurantes y transporte público.",
+            "m2_construidos": 70.0,
+            "m2_totales": 75.0,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 2,
+            "direccion": "Av. Providencia 1500",
+            "comuna": 316,
+            "tipo_inmueble": 2,
+            "precio_mensual": "650000.00",
+            "arrendador": 1
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 2,
+        "fields": {
+            "nombre": "Casa Las Condes",
+            "descripcion": "Casa familiar amplia con jardín, cuatro habitaciones y dos estacionamientos.",
+            "m2_construidos": 120.0,
+            "m2_totales": 250.0,
+            "estacionamientos": 2,
+            "habitaciones": 4,
+            "banos": 3,
+            "direccion": "Av. Las Condes 5000",
+            "comuna": 307,
+            "tipo_inmueble": 1,
+            "precio_mensual": "1200000.00",
+            "arrendador": 2
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 3,
+        "fields": {
+            "nombre": "Departamento Ñuñoa",
+            "descripcion": "Departamento moderno cercano a parques, comercios y estaciones de metro.",
+            "m2_construidos": 60.0,
+            "m2_totales": 65.0,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 1,
+            "direccion": "Av. Ñuñoa 1200",
+            "comuna": 313,
+            "tipo_inmueble": 2,
+            "precio_mensual": "580000.00",
+            "arrendador": 3
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 4,
+        "fields": {
+            "nombre": "Casa Puente Alto",
+            "descripcion": "Casa familiar con patio, tres habitaciones y buena conectividad.",
+            "m2_construidos": 95.0,
+            "m2_totales": 180.0,
+            "estacionamientos": 2,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Av. Concha y Toro 2500",
+            "comuna": 327,
+            "tipo_inmueble": 1,
+            "precio_mensual": "750000.00",
+            "arrendador": 1
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 5,
+        "fields": {
+            "nombre": "Departamento Santiago Centro",
+            "descripcion": "Departamento de un dormitorio ubicado en el centro de Santiago, cercano a servicios y transporte.",
+            "m2_construidos": 45.0,
+            "m2_totales": 48.0,
+            "estacionamientos": 0,
+            "habitaciones": 1,
+            "banos": 1,
+            "direccion": "Av. Portugal 800",
+            "comuna": 325,
+            "tipo_inmueble": 2,
+            "precio_mensual": "450000.00",
+            "arrendador": 2
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 6,
+        "fields": {
+            "nombre": "Parcela Melipilla",
+            "descripcion": "Parcela con amplio terreno, áreas verdes y espacio para actividades familiares.",
+            "m2_construidos": 150.0,
+            "m2_totales": 5000.0,
+            "estacionamientos": 4,
+            "habitaciones": 4,
+            "banos": 3,
+            "direccion": "Camino Melipilla 10000",
+            "comuna": 337,
+            "tipo_inmueble": 3,
+            "precio_mensual": "1500000.00",
+            "arrendador": 3
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 7,
+        "fields": {
+            "nombre": "Departamento La Serena",
+            "descripcion": "Departamento cercano a la costa, con dos habitaciones y espacios luminosos.",
+            "m2_construidos": 65.0,
+            "m2_totales": 70.0,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 2,
+            "direccion": "Av. del Mar 1200",
+            "comuna": 30,
+            "tipo_inmueble": 2,
+            "precio_mensual": "600000.00",
+            "arrendador": 4
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 8,
+        "fields": {
+            "nombre": "Casa Valparaíso",
+            "descripcion": "Casa ubicada en un sector residencial de Valparaíso, con vista hacia la ciudad.",
+            "m2_construidos": 110.0,
+            "m2_totales": 180.0,
+            "estacionamientos": 1,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Cerro Alegre 450",
+            "comuna": 45,
+            "tipo_inmueble": 1,
+            "precio_mensual": "850000.00",
+            "arrendador": 1
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 9,
+        "fields": {
+            "nombre": "Departamento Viña del Mar",
+            "descripcion": "Departamento cercano a la playa, comercios y áreas de entretenimiento.",
+            "m2_construidos": 75.0,
+            "m2_totales": 80.0,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 2,
+            "direccion": "Av. San Martín 800",
+            "comuna": 51,
+            "tipo_inmueble": 2,
+            "precio_mensual": "900000.00",
+            "arrendador": 2
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 10,
+        "fields": {
+            "nombre": "Casa Concepción",
+            "descripcion": "Casa amplia en barrio residencial, con patio y tres habitaciones.",
+            "m2_construidos": 105.0,
+            "m2_totales": 200.0,
+            "estacionamientos": 2,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Av. Los Carrera 1500",
+            "comuna": 167,
+            "tipo_inmueble": 1,
+            "precio_mensual": "700000.00",
+            "arrendador": 3
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 11,
+        "fields": {
+            "nombre": "Casa Temuco",
+            "descripcion": "Casa familiar con patio, ubicada en un sector tranquilo de Temuco.",
+            "m2_construidos": 100.0,
+            "m2_totales": 180.0,
+            "estacionamientos": 2,
+            "habitaciones": 3,
+            "banos": 2,
+            "direccion": "Av. Alemania 900",
+            "comuna": 200,
+            "tipo_inmueble": 1,
+            "precio_mensual": "680000.00",
+            "arrendador": 4
+        }
+    },
+    {
+        "model": "gestion_inmuebles.inmueble",
+        "pk": 12,
+        "fields": {
+            "nombre": "Departamento Puerto Montt",
+            "descripcion": "Departamento con vista al entorno natural, cercano al centro de Puerto Montt.",
+            "m2_construidos": 68.0,
+            "m2_totales": 72.0,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "banos": 2,
+            "direccion": "Av. Costanera 700",
+            "comuna": 244,
+            "tipo_inmueble": 2,
+            "precio_mensual": "620000.00",
+            "arrendador": 1
+        }
+    }
+]
